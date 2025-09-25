@@ -3,8 +3,6 @@ CP1404/CP5632 - Practical
 Code for temperature conversion
 """
 
-#TODO two functions for temperature unit conversion
-
 def main():
     MENU = """C - Convert Celsius to Fahrenheit
     F - Convert Fahrenheit to Celsius
@@ -35,3 +33,5 @@ def fahrenheit_to_celsius(celsius: float, fahrenheit: float) -> float:
 def celsius_to_fahrenheit(celsius: float) -> float:
     fahrenheit = celsius * 9.0 / 5 + 32
     return fahrenheit
+
+main()
