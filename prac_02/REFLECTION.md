@@ -23,9 +23,9 @@ Need to more carefully read instructions.
 ## What are you currently doing poorly for practicals in this subject that you will change?
 
 Naming things poorly, missing things in my code that could make it shorter/more efficient.
-Overall end products should be checked over more carefully do be more 'finished'. 
-Change will rely on better scheduling around work 
+Overall end products should be checked over more carefully to be more 'finished'. 
+Change will rely on better scheduling around other uni subjects.
 
 ## What are you doing really well for practicals in this subject?
-
+I am unsure so far. Maybe this can be updated after a few practicals.
 ...

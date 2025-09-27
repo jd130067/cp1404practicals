@@ -1,11 +1,9 @@
 """Checks Minimum Length of Password and Prints Stars"""
 
-
 min_length = 5
 
 def main():
     password_length = get_password()
-
     print_asterisks(password_length)
 
 
@@ -23,6 +21,5 @@ def get_password() -> int:
         password = input("Password: ")
         password_length = len(password)
     return password_length
-
 
 main()

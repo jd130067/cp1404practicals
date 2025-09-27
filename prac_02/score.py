@@ -5,6 +5,7 @@ Broken program to determine score status
 
 import random
 
+
 def main():
     score = float(input("Enter score: "))
     print(score_result(score))
@@ -12,6 +13,7 @@ def main():
     random_score = 100 * random.random()
     print(f"Random Score: {random_score: .2f}")
     print(score_result(random_score))
+
 
 def score_result(score: float):
     if 0 <= score <= 100:
