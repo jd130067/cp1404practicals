@@ -1,6 +1,6 @@
 """
 CP1404/CP5632 - Practical
-Code for temperature conversion
+Program to calculate temperature conversion
 """
 
 def main():

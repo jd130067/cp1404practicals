@@ -1,4 +1,10 @@
-"""Score Menu: Get Valid Score, Print Result, Prints as Many Stars as Score, Quit"""
+"""Score Menu Program
+Allows user to:
+- Enter a score (0–100)
+- See result category (Excellent, Pass, or Bad)
+- Print stars equal to their score
+- Quit the program
+"""
 
 import math
 
