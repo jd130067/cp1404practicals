@@ -16,8 +16,8 @@ def get_password() -> int:
     password = input("Password: ")
     password_length = len(password)
 
-    while password_length < 5:
-        print(f"Minimum Password Length is {min_length}")
+    while password_length < MIN_LENGTH:
+        print(f"Minimum Password Length is {MIN_LENGTH}")
         password = input("Password: ")
         password_length = len(password)
     return password_length
