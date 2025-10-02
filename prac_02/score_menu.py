@@ -8,13 +8,15 @@ Allows user to:
 
 import math
 
-def main():
-    score = get_valid_score()
-    menu = """G - Press "G" to input your score
+MENU = """G - Press "G" to input your score
     P - Press "P" to see your result
     S - Pretty Stars :)
     Q - Quit"""
-    print(menu)
+
+
+def main():
+    score = get_valid_score()
+    print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
         if choice == "G":
@@ -23,24 +25,24 @@ def main():
             score_result_readable = score_result(score)
             print(score_result_readable)
         elif choice == "S":
-            integer_score = int(math.ceil(score)) #rounding up cuz more stars better
+            integer_score = int(math.ceil(score)) # Round up cuz more stars better
             print_asterisks(integer_score)
         else:
             print("Invalid option")
-        print(menu)
+        print(MENU)
         choice = input(">>> ").upper()
     print("I guess this is goodbye :(")
 
 
 def score_result(score: float):
     """Categorise float into excellent, pass or bad."""
-    #Score Validity Check Done in Separate Function
+    # Score Validity Check Done in Separate Function
     if score >= 90:
-        return"Excellent"
+        return "Excellent"
     elif score >= 50:
-        return"Pass"
+        return "Pass"
     else:
-        return"Bad"
+        return "Bad"
 
 
 def print_asterisks(number_of_stars: int):
@@ -63,5 +65,6 @@ def get_valid_score():
             print("Your score needs to be from 0 - 100")
 
     return None
+
 
 main()
