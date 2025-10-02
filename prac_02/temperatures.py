@@ -3,10 +3,12 @@ CP1404/CP5632 - Practical
 Program to calculate temperature conversion
 """
 
-def main():
-    MENU = """C - Convert Celsius to Fahrenheit
+MENU = """C - Convert Celsius to Fahrenheit
     F - Convert Fahrenheit to Celsius
     Q - Quit"""
+
+
+def main():
     print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
@@ -16,7 +18,7 @@ def main():
             print(f"Result: {fahrenheit:.2f} F")
         elif choice == "F":
             fahrenheit = float(input("Fahrenheit: "))
-            celsius = fahrenheit_to_celsius(celsius, fahrenheit)
+            celsius = fahrenheit_to_celsius(fahrenheit)
             print(f"Result: {celsius:.2f} \u00B0C")
         else:
             print("Invalid option")
@@ -25,7 +27,7 @@ def main():
     print("Thank you.")
 
 
-def fahrenheit_to_celsius(celsius: float, fahrenheit: float) -> float:
+def fahrenheit_to_celsius(fahrenheit: float) -> float:
     celsius = 5 / 9 * (fahrenheit - 32)
     return celsius
 
@@ -33,5 +35,6 @@ def fahrenheit_to_celsius(celsius: float, fahrenheit: float) -> float:
 def celsius_to_fahrenheit(celsius: float) -> float:
     fahrenheit = celsius * 9.0 / 5 + 32
     return fahrenheit
+
 
 main()
