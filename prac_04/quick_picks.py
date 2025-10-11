@@ -18,11 +18,11 @@ def generate_quick_picks(number_of_picks):
                 quick_pick.append(random_number)
 
         for k in range(len(quick_pick)):
-            minimum_index = i
-            for j in range(i+1, len(quick_pick)):
+            minimum_index = k
+            for j in range(k+1, len(quick_pick)):
                 if quick_pick[j] < quick_pick[minimum_index]:
                     minimum_index = j
-            quick_pick[i], quick_pick[minimum_index] = quick_pick[minimum_index], quick_pick[i]
+            quick_pick[k], quick_pick[minimum_index] = quick_pick[minimum_index], quick_pick[k]
 
         print(quick_pick)
 
