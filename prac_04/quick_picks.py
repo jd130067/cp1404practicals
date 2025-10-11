@@ -8,9 +8,12 @@ MAXIMUM_VALUE = 45
 def main():
     """Program to create as many quick picks as needed."""
     number_of_picks = int(input("How many quick picks?: "))
+    while number_of_picks <= 0:
+        print("No you need to gamble >:(")
+        number_of_picks = int(input("How many quick picks?: "))
     quick_picks = generate_quick_picks(number_of_picks)
     for i in quick_picks:
-        print(" ".join(f"{number_in_pick:2}" for number_in_pick in i)) # I'm quite proud of this
+        print(" ".join(f"{number_in_pick:2}" for number_in_pick in i))
 
 
 def generate_quick_picks(number_of_picks):
@@ -24,7 +27,6 @@ def generate_quick_picks(number_of_picks):
                 current_quick_pick.append(random_number)
 
         current_quick_pick.sort()
-
         collated_quick_picks.append(current_quick_pick)
     return collated_quick_picks
 
