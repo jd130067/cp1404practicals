@@ -4,26 +4,34 @@ NUMBERS_PER_PICK = 6
 MINIMUM_VALUE = 1
 MAXIMUM_VALUE = 45
 
+
 def main():
+    """Program to create as many quick picks as needed."""
     number_of_picks = int(input("How many quick picks?: "))
-    generate_quick_picks(number_of_picks)
+    quick_picks = generate_quick_picks(number_of_picks)
+    for i in quick_picks:
+        print(" ".join(f"{number_in_pick:2}" for number_in_pick in i)) # I'm quite proud of this
 
 
 def generate_quick_picks(number_of_picks):
+    """Generates nested lists of sorted quick picks."""
+    collated_quick_picks = []
     for i in range(number_of_picks):
-        quick_pick = []
-        while len(quick_pick) < NUMBERS_PER_PICK:
+        current_quick_pick = []
+        while len(current_quick_pick) < NUMBERS_PER_PICK:
             random_number = random.randint(MINIMUM_VALUE, MAXIMUM_VALUE)
-            if not(random_number in quick_pick):
-                quick_pick.append(random_number)
+            if not(random_number in current_quick_pick):
+                current_quick_pick.append(random_number)
 
-        for k in range(len(quick_pick)):
+        for k in range(len(current_quick_pick)):
             minimum_index = k
-            for j in range(k+1, len(quick_pick)):
-                if quick_pick[j] < quick_pick[minimum_index]:
+            for j in range(k+1, len(current_quick_pick)):
+                if current_quick_pick[j] < current_quick_pick[minimum_index]:
                     minimum_index = j
-            quick_pick[k], quick_pick[minimum_index] = quick_pick[minimum_index], quick_pick[k]
+            current_quick_pick[k], current_quick_pick[minimum_index] = current_quick_pick[minimum_index], current_quick_pick[k]
 
-        print(quick_pick)
+        collated_quick_picks.append(current_quick_pick)
+    return collated_quick_picks
+
 
 main()
