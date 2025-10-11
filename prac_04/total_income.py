@@ -2,7 +2,6 @@
 CP1404/CP5632 Practical
 Starter code for cumulative total income program
 """
-from prac_03.capitalist_conrad import number_of_days
 
 
 def main():
@@ -18,6 +17,7 @@ def main():
 
 
 def print_report(incomes: list[float], number_of_months: int):
+    """Prints the income per month and cumulative total."""
     print("\nIncome Report\n-------------")
     total = 0
     for month in range(1, number_of_months + 1):
