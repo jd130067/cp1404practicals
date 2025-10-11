@@ -9,7 +9,7 @@ FILENAME = "subject_data.txt"
 def main():
     data = load_data_from_file(FILENAME)
     for i in range(0, len(data)):
-        print(f"{data[i][0]} is taught by {data[i][1]} and has {data[i][2]} students")
+        print(f"{data[i][0]} is taught by {data[i][1]:<12} and has {data[i][2]:>3} students")
 
 
 def load_data_from_file(filename=FILENAME):
