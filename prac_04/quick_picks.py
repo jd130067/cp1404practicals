@@ -23,12 +23,7 @@ def generate_quick_picks(number_of_picks):
             if not(random_number in current_quick_pick):
                 current_quick_pick.append(random_number)
 
-        for k in range(len(current_quick_pick)):
-            minimum_index = k
-            for j in range(k+1, len(current_quick_pick)):
-                if current_quick_pick[j] < current_quick_pick[minimum_index]:
-                    minimum_index = j
-            current_quick_pick[k], current_quick_pick[minimum_index] = current_quick_pick[minimum_index], current_quick_pick[k]
+        current_quick_pick.sort()
 
         collated_quick_picks.append(current_quick_pick)
     return collated_quick_picks
