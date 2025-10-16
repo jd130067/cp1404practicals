@@ -10,7 +10,7 @@ def main():
     number_of_picks = int(input("How many quick picks?: "))
     while number_of_picks <= 0:
         print("No you need to gamble >:(")
-        number_of_picks = int(input("How many quick picks?: "))
+        number_of_picks = int(input("How many quick picks?: ")) + 10  # lol
     quick_picks = generate_quick_picks(number_of_picks)
     for i in quick_picks:
         print(" ".join(f"{number_in_pick:2}" for number_in_pick in i))
