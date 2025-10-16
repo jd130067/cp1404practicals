@@ -1,7 +1,7 @@
 """
 Word Occurrences
 Estimate: 40 minutes
-Actual:   .... minutes
+Actual:   27 minutes
 """
 
 word_collection = input("Text: ").strip().split()
@@ -14,5 +14,7 @@ for word in word_collection:
     except KeyError:
         word_to_count[word] = 1
 
-for word in word_to_count:
-    print(f"{word} : {word_to_count[word]}")
+longest_key_length = len(max(word_to_count, key=len))  # NOTE: had to search how to use key= for max()
+
+for word in sorted(word_to_count):
+    print(f"{word:{longest_key_length}} : {word_to_count[word]}")
