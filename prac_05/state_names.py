@@ -9,7 +9,8 @@ SHORT_TO_LONG_STATE_NAME = {"QLD": "Queensland", "NSW": "New South Wales", "NT":
                             "ACT": "Australian Capital Territory", "VIC": "Victoria", "TAS": "Tasmania",
                             "SA": "South Australia"}
 
-print(SHORT_TO_LONG_STATE_NAME)
+for state in SHORT_TO_LONG_STATE_NAME:
+    print(f"{state:3} is {SHORT_TO_LONG_STATE_NAME[state]}")
 
 state_code = input("Enter short state: ").upper()
 
