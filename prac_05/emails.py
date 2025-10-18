@@ -8,8 +8,20 @@ Estimate is longer because I forgot how title works and am including time to che
 
 def main():
     user_email = input("Email: ")
-    potential_name = extract_name(user_email)
-    print(potential_name)
+    email_to_name = {}
+    while user_email != "":
+        name = extract_name(user_email)
+        choice = input(f"Is your name {name}? [Y/n] ").upper()
+        if choice not in ("Y", ""):
+            name = input("Please input correct name: ")
+
+        email_to_name[user_email] = name
+        print(email_to_name)
+        user_email = input("Email: ")
+
+    print()
+    for email, name in email_to_name.items():
+        print(f"{name} ({email})")
 
 
 def extract_name(email):
