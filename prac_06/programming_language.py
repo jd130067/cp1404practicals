@@ -13,6 +13,4 @@ class ProgrammingLanguage:
         return f"{self.name}: Typing: {self.typing}, Reflection: {self.reflection}, Year: {self.year}"
 
     def is_dynamic(self):
-        if self.typing == "Dynamic":
-            return True
-        return False
+        return self.typing == "Dynamic"
