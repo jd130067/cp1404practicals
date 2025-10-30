@@ -1,3 +1,8 @@
+"""
+Expected Time: I FORGOT NOOOOOOOO - I'll be better for guitars <3
+Actual Time: approx 15 minutes
+"""
+
 
 from programming_language import ProgrammingLanguage
 
