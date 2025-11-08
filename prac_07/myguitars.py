@@ -1,6 +1,6 @@
 """
 CP1404 - Practical 07
-Program to ...
+Program to load, change and save a list of guitars using the Guitar class.
 """
 
 from guitar import Guitar
@@ -8,6 +8,7 @@ from guitar import Guitar
 FILENAME = "guitars.csv"
 
 def main():
+    """Program to load, change and save a list of guitars."""
     guitars = load_guitars(FILENAME)
     print(f"Loaded {len(guitars)} guitars.")
     name = input("Name: ")
@@ -28,6 +29,7 @@ def main():
 
 
 def get_positive_number(input_prompt):
+    """Get a positive float from the user."""
     got_positive_number = False
     while not got_positive_number:
         try:
@@ -43,6 +45,7 @@ def get_positive_number(input_prompt):
 
 
 def load_guitars(filename):
+    """Load guitars into a list from a csv."""
     guitars = []
     in_file = open(filename, 'r')
     for line in in_file:
@@ -57,6 +60,7 @@ def load_guitars(filename):
 
 
 def save_guitars(filename, guitars):
+    """Save guitars list using class fields into a csv."""
     with open(filename, "w", encoding="utf-8-sig") as out_file:
         for guitar in guitars:
             guitar_string = f"{guitar.name},{guitar.year},{guitar.cost}"
