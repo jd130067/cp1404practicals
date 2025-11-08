@@ -12,7 +12,7 @@ class Project:
         self.completion_percentage = completion_percentage
 
     def __str__(self):
-        return f"Project - {self.name} ({self.start_date}) is {self.completion_percentage}% done costs ~{self.cost_estimate}"
+        return f"Project - {self.name} ({self.start_date}) is {self.completion_percentage}% done costs ~${self.cost_estimate:.2f} Priority: {self.priority}"
 
     def __lt__(self, object):
         return self.priority < object.priority
