@@ -18,6 +18,7 @@ MENU = """Menu:
 - (Q)uit"""
 
 def main():
+    projects = load_projects()
     print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
@@ -41,11 +42,41 @@ def main():
         elif choice == "A":
             pass
         elif choice == "U":
-            pass
+            update_project(projects)
         else:
             print("Invalid Menu Choice.")
         print(MENU)
         choice = input(">>> ").upper()
+
+
+def update_project(projects):
+    for project_index, project in enumerate(projects):
+        print(f"{project_index + 1}. {project}")
+
+    try:
+        project_to_update = int(input("Choose a project to update: "))
+        project = projects[project_to_update - 1]
+    except (ValueError, IndexError):
+        print("Invalid selection.")
+        return
+
+    # Get new values from user
+    new_priority_input = input("Enter a new priority (or leave blank): ")
+    new_completion_input = input("Enter a new completion percentage (or leave blank): ")
+
+    if new_priority_input.strip():
+        try:
+            project.priority = int(new_priority_input)
+        except ValueError:
+            print("Invalid priority — keeping previous value.")
+
+    if new_completion_input.strip():
+        try:
+            project.completion_percentage = float(new_completion_input)
+        except ValueError:
+            print("Invalid completion % — keeping previous value.")
+
+    print(f"Updated project: {project}")
 
 
 def filter_by_date(projects, filter_date = datetime.date.today()):
@@ -101,7 +132,6 @@ def load_projects(filename = DEFAULT_FILENAME):
     if load_project_failure_count > 0:
         print(f"Failed to load {load_project_failure_count} projects")
     print(f"Loaded {loaded_projects} projects.")
-    print(projects)
     return projects
 
 main()
