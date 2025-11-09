@@ -4,6 +4,9 @@ Class for project_management
 """
 
 class Project:
+
+    comparison_field = "priority"
+
     def __init__(self, name, start_date, priority, cost_estimate, completion_percentage):
         self.name = name
         self.start_date = start_date
@@ -15,7 +18,10 @@ class Project:
         return f"Project - {self.name} ({self.start_date}) is {self.completion_percentage}% done costs ~${self.cost_estimate:.2f} Priority: {self.priority}"
 
     def __lt__(self, object):
-        return self.priority < object.priority
+        return getattr(self, Project.comparison_field) < getattr(object, Project.comparison_field)
+
+    def __ge__(self, object):
+        return getattr(self, Project.comparison_field) >= getattr(object, Project.comparison_field)
 
     def is_complete(self):
         return self.completion_percentage >= 100

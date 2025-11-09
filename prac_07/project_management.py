@@ -28,7 +28,16 @@ def main():
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
-            pass
+            try:
+                # Code stolen from prac
+                date_string = input("Date (d/m/yyyy): ")  # e.g., "30/9/2022"
+                date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+                print(f"That day is/was {date.strftime('%A')}")
+                print(date.strftime("%d/%m/%Y"))
+                # End of code stolen from prac
+                filter_by_date(projects, date)
+            except ValueError:
+                print("That wasn't a date. Try Again :)")
         elif choice == "A":
             pass
         elif choice == "U":
@@ -37,6 +46,19 @@ def main():
             print("Invalid Menu Choice.")
         print(MENU)
         choice = input(">>> ").upper()
+
+
+def filter_by_date(projects, filter_date = datetime.date.today()):
+    Project.comparison_field = "start_date"
+    filtered_projects = [project for project in projects if project.start_date >= filter_date]
+
+    if not filtered_projects:
+        print(f"No projects starting on or after {filter_date:%d/%m/%Y}.")
+        return
+    else:
+        print(f"Projects starting on or after {filter_date:%d/%m/%Y}:")
+        for project in filtered_projects:
+            print(project)
 
 
 def display_projects(projects):
