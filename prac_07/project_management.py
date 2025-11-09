@@ -40,13 +40,26 @@ def main():
             except ValueError:
                 print("That wasn't a date. Try Again :)")
         elif choice == "A":
-            pass
+            add_project(projects)
         elif choice == "U":
             update_project(projects)
         else:
             print("Invalid Menu Choice.")
         print(MENU)
         choice = input(">>> ").upper()
+
+
+def add_project(projects):
+    name = input("Enter project name: ")
+    start_date_string = input("Enter start date: ")
+    start_date = datetime.datetime.strptime(start_date_string, "%d/%m/%Y").date()
+    priority = int(input("Enter priority: "))
+    cost_estimate = float(input("Enter cost estimate: "))
+    completion_percentage = float(input("Enter completion percentage: "))
+    new_project = Project(name, start_date, priority, cost_estimate, completion_percentage)
+    projects.append(new_project)
+    print(f"Added {new_project}")
+
 
 
 def update_project(projects):
