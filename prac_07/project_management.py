@@ -80,7 +80,6 @@ def add_project(projects):
     print(f"Added {new_project}")
 
 
-
 def update_project(projects):
     """Update priority/completion percentage for a project."""
     for project_index, project in enumerate(projects):
