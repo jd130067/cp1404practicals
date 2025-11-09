@@ -1,7 +1,8 @@
 """
 CP1404 - Practical 07
 Estimate: 2hrs
-Actual:
+Timer Recorded: 29hrs
+Actual Estimate: like 3hrs? spread out over 2 days
 """
 
 import datetime
@@ -25,7 +26,7 @@ def main():
         if choice == "L":
             projects  = load_projects()
         elif choice == "S":
-            pass
+            save_projects(projects)
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
@@ -49,7 +50,25 @@ def main():
         choice = input(">>> ").upper()
 
 
+def save_projects(projects, filename = DEFAULT_FILENAME):
+    """Save a list of projects to a tab-delimited txt file."""
+    with open(filename, "w", encoding="utf-8-sig") as out_file:
+        for project in projects:
+            project_string = "\t".join([
+                project.name,
+                project.start_date.strftime("%d/%m/%Y"),
+                str(project.priority),
+                str(project.cost_estimate),
+                str(project.completion_percentage)
+            ])
+            out_file.write(project_string + "\n")
+
+    print(f"Projects saved to {filename}")
+
+
+# Ran out of time to do error checking due to some unexpected home events :(
 def add_project(projects):
+    """Append a project to the current list of projects."""
     name = input("Enter project name: ")
     start_date_string = input("Enter start date: ")
     start_date = datetime.datetime.strptime(start_date_string, "%d/%m/%Y").date()
@@ -63,6 +82,7 @@ def add_project(projects):
 
 
 def update_project(projects):
+    """Update priority/completion percentage for a project."""
     for project_index, project in enumerate(projects):
         print(f"{project_index + 1}. {project}")
 
@@ -93,6 +113,7 @@ def update_project(projects):
 
 
 def filter_by_date(projects, filter_date = datetime.date.today()):
+    """Display projects starting on or after a chosen date."""
     Project.comparison_field = "start_date"
     filtered_projects = [project for project in projects if project.start_date >= filter_date]
 
