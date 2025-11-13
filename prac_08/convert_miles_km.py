@@ -22,5 +22,10 @@ class ConvertMilesKilometresApp(App):
         except ValueError:
             pass
 
+    def handle_incrementing(self, miles, difference):
+        new_miles = float(miles) + difference
+        self.root.ids.input_value.text = str(new_miles)
+
+
 
 ConvertMilesKilometresApp().run()
