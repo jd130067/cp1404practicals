@@ -7,6 +7,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.core.window import Window
 
+CONVERSION_FACTOR = 1.60934
 
 class ConvertMilesKilometresApp(App):
     def build(self):
@@ -17,7 +18,7 @@ class ConvertMilesKilometresApp(App):
 
     def handle_conversion(self, miles):
         try:
-            km = float(miles)*1.60934
+            km = float(miles)*CONVERSION_FACTOR
             self.root.ids.output_label.text = str(km)
         except ValueError:
             self.root.ids.output_label.text = '0.0'
