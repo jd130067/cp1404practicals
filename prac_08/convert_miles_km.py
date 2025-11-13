@@ -15,5 +15,12 @@ class ConvertMilesKilometresApp(App):
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
 
+    def handle_conversion(self, miles):
+        try:
+            km = float(miles)*1.60934
+            self.root.ids.output_label.text = str(km)
+        except ValueError:
+            pass
+
 
 ConvertMilesKilometresApp().run()

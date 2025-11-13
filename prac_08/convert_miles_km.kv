@@ -18,7 +18,8 @@ BoxLayout:
     Button:
         text: "Convert miles to km"
         font_size: 48
+        on_press: app.handle_conversion(input_number.text)
     Label:
-        text: "text test"
+        id: output_label
         font_size: 48
         color: (0.721, 0.509, 0.878, 0.8) # I know this is meant to be yellow, I wanted lilac
