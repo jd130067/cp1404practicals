@@ -4,7 +4,7 @@ BoxLayout:
         orientation: 'horizontal'
         TextInput:
             id: input_value
-            text: '7'
+            text: ''
             font_size: 48
             multiline: False
         BoxLayout:
@@ -12,12 +12,12 @@ BoxLayout:
             Button:
                 text: "Up"
                 font_size: 48
-                on_press: app.handle_incrementing(input_value.text, 1)
+                on_press: app.handle_incrementing(1, input_value.text)
 
             Button:
                 text: "Down"
                 font_size: 48
-                on_press: app.handle_incrementing(input_value.text, -1)
+                on_press: app.handle_incrementing(-1, input_value.text)
     Button:
         text: "Convert miles to km"
         font_size: 48

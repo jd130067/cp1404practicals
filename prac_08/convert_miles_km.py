@@ -20,12 +20,14 @@ class ConvertMilesKilometresApp(App):
             km = float(miles)*1.60934
             self.root.ids.output_label.text = str(km)
         except ValueError:
-            pass
+            self.root.ids.output_label.text = '0.0'
 
-    def handle_incrementing(self, miles, difference):
-        new_miles = float(miles) + difference
-        self.root.ids.input_value.text = str(new_miles)
-
+    def handle_incrementing(self, difference, miles):
+        try:
+            new_miles = float(miles) + difference
+            self.root.ids.input_value.text = str(new_miles)
+        except ValueError:
+            self.root.ids.input_value.text = str(difference)
 
 
 ConvertMilesKilometresApp().run()
