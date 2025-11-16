@@ -27,7 +27,7 @@ class ConvertMilesKilometresApp(App):
             self.root.ids.output_label.text = '0.0'
 
     def handle_incrementing(self, difference, miles):
-        """"""
+        """Increments miles input field by a set difference."""
         try:
             new_miles = float(miles) + difference
             self.root.ids.input_value.text = str(new_miles)
