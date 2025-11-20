@@ -13,6 +13,6 @@ fanci_taxi.drive(53)
 print(normal_taxi)
 print(fanci_taxi)
 
-print(f"Normal Cost: {normal_taxi.get_fare()}")
-print(f"Fancy Cost: {fanci_taxi.get_fare()}")
+print(f"Normal Cost: {normal_taxi.get_fare():.2f}")
+print(f"Fancy Cost: {fanci_taxi.get_fare():.2f}")
 
