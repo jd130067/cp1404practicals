@@ -4,7 +4,7 @@ Program to test taxi class.
 
 from taxi import Taxi
 
-my_taxi = Taxi("Prius 1", 100, 1.23)
+my_taxi = Taxi("Prius 1", 100)
 my_taxi.drive(40)
 print(my_taxi)
 print(f"Current Fare Price: ${my_taxi.get_fare()}")
