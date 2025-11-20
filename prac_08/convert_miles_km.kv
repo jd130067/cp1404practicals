@@ -1,0 +1,29 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        TextInput:
+            id: input_value
+            text: ''
+            font_size: 48
+            multiline: False
+            on_text: app.handle_conversion(input_value.text)
+        BoxLayout:
+            orientation: 'vertical'
+            Button:
+                text: "Up"
+                font_size: 48
+                on_press: app.handle_incrementing(1, input_value.text)
+
+            Button:
+                text: "Down"
+                font_size: 48
+                on_press: app.handle_incrementing(-1, input_value.text)
+#    Button:
+#        text: "Convert miles to km"
+#        font_size: 48
+#        on_press: app.handle_conversion(input_value.text)
+    Label:
+        id: output_label
+        font_size: 48
+        color: (0.721, 0.509, 0.878, 0.8) # I know this is meant to be yellow, I wanted lilac
