@@ -1,8 +1,5 @@
 # CP1404 Practical Reflection
 
-Write short but thoughtful answers to each of the following.  
-Replace each `...` with your meaningful answer.
-
 ## Estimates
 
 Regarding the **estimates** that you did for practical tasks...
@@ -27,31 +24,35 @@ try to race the estimate a little to see if I could finish before my estimated t
 
 ### What have you learned from being reviewed by other people?
 
-...
+Mostly that it makes me happy when people give me little compliments on my code, I wish I had done this more in my own reviews for others.
+It was a little hard to learn more about coding as we are all learning the same things at the same time and usually reviews came after workshops
+where Lindsay had already showed me my horrendous coding errors and I learned from those instead of reviews.
 
 ### What have you learned from doing code reviews of other people?
 
-...
-
-Provide proper Markdown links (not bare URLs) to two (2) PRs that show you doing good code reviews for any of the past
-pracs.  
-For each one, write a short explanation of what was good about your review.
+The biggest thing is literally just where on GitHUB I need to be looking to do the reviews. I have used github to copy
+repos before this subject but nothing else so starting to find out about other functions of the site has been nice.
 
 ### Good Code Review 1
 
-[]()
+[Code Review for Lachlan Torrisi](https://github.com/Lachlan-Torrisi/cp1404practical/pull/1)
 
 ### Explanation
 
-...
+Primarily great because I used the taco emoji <3
+I tried to focus on what Lachlan specified for feedback which I think was good. I did make a pretty big mistake of not 
+specifically commenting on sections of the code and just left a singular comment which is not great, I realised this mistake after feedback in the workshop.
 
 ### Good Code Review 2
 
-[]()
+[Code Review for emokebohuss](https://github.com/emokebohuss/cp1404practicals/pull/6#pullrequestreview-3521254525)
 
 ### Explanation
 
-...
+This review was late due to my laptop breaking :(
+I fixed my mistake of leaving a single comment with all the review, once again I tried to focus on specifically what they requested (SRP in taxi simulator).
+I had a few other comments on the code as I initially starting going through the commits for some reason instead of the actual files.
+I tried to be nice with my comments and make suggestions as to what they could change instead of demanding it be completely different.
 
 ## Practicals
 
