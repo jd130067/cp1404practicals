@@ -16,5 +16,10 @@ while page_title != "":
     except wikipedia.DisambiguationError:
         print(f"Disambiguation error: {page_title} may refer to multiple pages:")
 
+    except wikipedia.PageError:
+        print(f"{page_title} does not exist.")
+
     page_title = input("Page title: ")
+
+print('Thank you')
 
